@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- morris chart -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Chart.js</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <h3 class="mt-2 text-center">Morris Charts</h3>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="card rounded-0">
+                    <div class="card-header bg-warning rounded-0 text-white">
+                        chart 1
+                    </div>
+                    <div class="card-body p-3">
+                        <div id="myfirstchart" style="height: 250px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card rounded-0">
+                    <div class="card-header bg-primary rounded-0 text-white">
+                        chart 2
+                    </div>
+                    <div class="card-body p-3">
+                        <div id="mysecondchart" style="height:250px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card rounded-0">
+                    <div class="card-header bg-info rounded-0 text-white">
+                        chart 3
+                    </div>
+                    <div class="card-body p-0">
+                        <div id="mythirdchart" style="height: 250px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card rounded-0">
+                    <div class="card-header bg-success rounded-0 text-white">
+                     chart 4
+                 </div>
+                 <div class="card-body p-2">
+                    <div id="myfourthchart" style="height:250px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card rounded-0">
+                <div class="card-header bg-dark rounded-0 text-white">
+                    chart 5
+                </div>
+                <div class="card-body p-2">
+                    <div style="height:250px;" id="myfifthchart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'myfirstchart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: [
+  { year: '2008', value: 20 },
+  { year: '2009', value: 10 },
+  { year: '2010', value: 5 },
+  { year: '2011', value: 5 },
+  { year: '2012', value: 20 }
+  ],
+  // The name of the data record attribute that contains x-values.
+  xkey: 'year',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['value'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Value']
+});
+
+// Use Morris.Bar
+    Morris.Bar({
+      element: 'mysecondchart',
+      data: [
+        {x: '2011 Q1', y: 3, z: 2, a: 1},
+        {x: '2011 Q2', y: 2, z: 3, a: 1},
+        {x: '2011 Q3', y: 1, z: 2, a: 4},
+        {x: '2011 Q4', y: 2, z: 4, a: 3}
+      ],
+      xkey: 'x',
+      ykeys: ['y', 'z', 'a'],
+      labels: ['Y', 'Z', 'A'],
+      barColors: ['#03d0ea', '#d13adf', '#fba540'],
+      gridTextColor : "#585757",
+      resize: true
+    });
+//donut chart
+    Morris.Donut({
+      element: 'mythirdchart',
+      data: [
+        {value: 50, label: 'Primary'},
+        {value: 15, label: 'Danger'},
+        {value: 10, label: 'Info'},
+        {value: 5, label: 'Success'}
+      ],
+      colors: [
+            '#14abef',
+            '#eb5076',
+            '#03d0ea',
+            '#02ba5a'
+        ],
+        resize: true,
+        labelColor: "#000",
+      formatter: function (x) { return x + "%"}
+    });
+    // area chart 
+    // Use Morris.Area instead of Morris.Line
+        Morris.Area({
+          element: 'myfourthchart',
+          behaveLikeLine: true,
+          data: [
+            {x: '2011 Q1', y: 1, z: 0},
+            {x: '2011 Q2', y: 6, z: 2},
+            {x: '2011 Q3', y: 2, z: 6},
+            {x: '2011 Q4', y: 8, z: 1}
+          ],
+          xkey: 'x',
+          ykeys: ['y', 'z'],
+          labels: ['Y', 'Z'],
+          lineColors: ['#fba540', '#03d0ea'],
+          resize: true,
+          gridTextColor : "#585757",
+          fillOpacity: 0.1,
+        });
+
+        // Use Morris.Area instead of Morris.Line
+    Morris.Area({
+      element: 'myfifthchart',
+      data: [
+        {x: '2010 Q4', y: 0, z: 1},
+        {x: '2011 Q1', y: 5, z: 4},
+        {x: '2011 Q2', y: 2, z: 1},
+        {x: '2011 Q3', y: 2, z: 5},
+        {x: '2011 Q4', y: 8, z: 2},
+        {x: '2012 Q1', y: 4, z: 5}
+      ],
+      xkey: 'x',
+      ykeys: ['y', 'z'],
+      labels: ['Y', 'Z'],
+      lineColors: ['#eb5076', '#14abef'],
+      gridTextColor : "#585757",
+      resize: true
+    });
+    
+    
+
+
+</script>
+</body>
+</html>

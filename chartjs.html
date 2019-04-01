@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<script type="text/javascript" src="js/Chart.bundle.min.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+		<title>Chart.js</title>
+</head>
+<body>
+		<div class="container-fluid">
+				<h3 class="mt-2 text-center">Chartjs</h3>
+				<div class="row mt-5">
+						<div class="col-md-6">
+								<div class="card rounded-0">
+										<div class="card-header bg-warning rounded-0 text-white">
+												chart 1
+										</div>
+										<div class="card-body p-3">
+												<canvas id="myChart" width="400" ></canvas>
+										</div>
+								</div>
+						</div>
+						<div class="col-md-6">
+								<div class="card rounded-0">
+										<div class="card-header bg-primary rounded-0 text-white">
+												chart 2
+										</div>
+										<div class="card-body p-3">
+												<canvas id="myChart2" width="400" ></canvas>
+										</div>
+								</div>
+						</div>
+						<div class="col-md-6">
+								<div class="card rounded-0">
+										<div class="card-header bg-info rounded-0 text-white">
+												chart 3
+										</div>
+										<div class="card-body p-0">
+												<canvas id="myChart3" width="400" ></canvas>
+										</div>
+								</div>
+						</div>
+						<div class="col-md-6">
+								<div class="card rounded-0">
+										<div class="card-header bg-success rounded-0 text-white">
+											 chart 4
+										</div>
+										<div class="card-body p-2">
+												<canvas id="myChart4" width="400" ></canvas>
+										</div>
+								</div>
+						</div>
+						<div class="col-md-6">
+								<div class="card rounded-0">
+										<div class="card-header bg-dark rounded-0 text-white">
+												chart 5
+										</div>
+										<div class="card-body p-2">
+												<canvas id="myChart5" width="400" ></canvas>
+										</div>
+								</div>
+						</div>
+						<div class="col-md-6">
+								<div class="card rounded-0">
+										<div class="card-header bg-warning rounded-0 text-white">
+												chart 6
+										</div>
+										<div class="card-body p-2">
+												<canvas id="dash2-chart1" width="400" ></canvas>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+		<!-- stte traffic chart -->
+		<script type="text/javascript">
+		var ctx = document.getElementById('myChart').getContext('2d');
+		var myChart = new Chart(ctx, {
+				type: 'line',
+				data: {
+						labels: ["2010", "2011", "2012", "2012", "2013", "2014", "2015", "2016", "2016", "2017"],
+						datasets: [{
+								label: 'New Visitor',
+								data: [3, 3, 8, 5, 7, 4, 6, 4, 6, 3],
+								backgroundColor: '#b47fe9',
+								borderColor: "transparent",
+								pointRadius :"0",
+								borderWidth: 3
+						}, {
+								label: 'Old Visitor',
+								data: [7, 5, 14, 7, 12, 6, 10, 6, 11, 5],
+								backgroundColor: "#dbc2f5",
+								borderColor: "transparent",
+								pointRadius :"0",
+								borderWidth: 1
+						}]
+				},
+				options: {
+						legend: {
+							display: false,
+							labels: {
+								fontColor: '#585757',  
+								boxWidth:40
+						}
+				},
+				tooltips: {
+					displayColors:false
+			},  
+			scales: {
+					xAxes: [{
+						ticks: {
+								beginAtZero:true,
+								fontColor: '#585757'
+						},
+						gridLines: {
+							display: true ,
+							color: "rgba(0, 0, 0, 0.05)"
+					},
+			}],
+			yAxes: [{
+				ticks: {
+						beginAtZero:true,
+						fontColor: '#585757'
+				},
+				gridLines: {
+					display: true ,
+					color: "rgba(0, 0, 0, 0.05)"
+			},
+	}]
+}
+}
+});  
+
+		// second chart
+		var ctx = document.getElementById("myChart2").getContext('2d');
+		var myChart = new Chart(ctx, {
+				type: 'doughnut',
+				data: {
+						labels: ["Direct", "Affiliate", "E-mail", "Other"],
+						datasets: [{
+								backgroundColor: [
+								"#14abef",
+								"#02ba5a",
+								"#d13adf",
+								"#fba540"
+								],
+								data: [5856, 2602, 1802, 1105],
+								borderWidth: [0, 0, 0, 0]
+						}]
+				},
+				options: {
+					 legend: {
+						 position :"bottom",    
+						 display: false,
+						 labels: {
+							fontColor: '#ddd',  
+							boxWidth:15
+					}
+			}
+			,
+			tooltips: {
+					displayColors:false
+			}
+	}
+});
+				// third chart
+				// chart 3
+
+				var ctx = document.getElementById('myChart3').getContext('2d');
+
+				var myChart = new Chart(ctx, {
+						type: 'line',
+						data: {
+							labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+							datasets: [{
+								label: 'Page Views',
+								data: [0, 8, 12, 5, 12, 8, 16, 25, 15, 10, 20, 10, 30],
+								backgroundColor: 'rgba(0, 150, 136, 0.33)',
+								borderColor: '#009688',
+								pointBackgroundColor:'#fff',
+								pointHoverBackgroundColor:'#fff',
+								pointBorderColor :'#fff',
+								pointHoverBorderColor :'#fff',
+								pointBorderWidth :1,
+								pointRadius :0,
+								pointHoverRadius :4,
+								borderWidth: 3
+						}]
+				}
+				,
+				options: {
+					legend: {
+						position: false,
+						display: true,
+				},
+				tooltips: {
+					 enabled: false
+			 },
+			 scales: {
+					xAxes: [{
+						display: false,
+						gridLines: false
+				}],
+				yAxes: [{
+						display: false,
+						gridLines: false
+				}]
+		}
+}
+
+});
+
+
+					 // chart 4
+			
+			var ctx = document.getElementById("myChart4").getContext('2d');
+						var myChart = new Chart(ctx, {
+								type: 'bar',
+								data: {
+										labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+										datasets: [{
+												label: 'Total Clicks',
+												data: [10, 10, 14, 18, 12, 8, 16, 25, 15, 10, 20, 10, 30],
+												backgroundColor: "#ff6a00"
+										}]
+								},
+								options: {
+										legend: {
+											display: false,
+											labels: {
+												fontColor: '#ddd',  
+												boxWidth:40
+											}
+										},
+										tooltips: {
+											enabled:false
+										},  
+										
+										scales: {
+											xAxes: [{
+													barPercentage: .3,
+												display: false,
+												gridLines: false
+											}],
+											yAxes: [{
+												display: false,
+												gridLines: false
+											}]
+										}
+
+						 }
+						 
+						});
+
+
+
+						// chart5
+
+			 var ctx = document.getElementById("myChart5").getContext('2d');
+						var myChart = new Chart(ctx, {
+								type: 'bar',
+								data: {
+										labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+										datasets: [{
+												label: 'Total Earning',
+												data: [39, 19, 25, 16, 31, 39, 23, 20, 23, 18, 15, 20],
+												backgroundColor: "#04b35a"
+										},{
+												label: 'Total Sales',
+												data: [27, 12, 26, 15, 21, 27, 13, 19, 32, 22, 18, 30],
+												backgroundColor: "rgba(4, 179, 90, 0.35)"
+										}]
+								},
+								options: {
+										legend: {
+											display: false,
+											position: 'bottom',
+											labels: {
+												fontColor: '#ddd',  
+												boxWidth:13
+											}
+										},
+										tooltips: {
+											enabled:true,
+											displayColors:false,
+										},  
+										
+										scales: {
+											xAxes: [{
+												 stacked: true,
+													barPercentage: .4,
+												display: false,
+												gridLines: false
+											}],
+											yAxes: [{
+												stacked: true,
+												display: false,
+												gridLines: false
+											}]
+										}
+						 }
+						});
+
+						// chart6
+						 var ctx = document.getElementById('dash2-chart1').getContext('2d');
+				
+						var myChart = new Chart(ctx, {
+								type: 'bar',
+								data: {
+										labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+										datasets: [{
+												label: 'Orders',
+												data: [25, 23, 27, 15, 27, 23, 31, 41, 31, 25, 35, 25, 30],
+												backgroundColor: 'rgba(0, 0, 0, 0.07)',
+												borderColor: "transparent",
+												borderWidth: 3
+										}, {
+												label: 'Payments',
+												type: 'line',
+												data: [10, 8, 12, 5, 12, 8, 16, 25, 15, 10, 20, 10, 15],
+												backgroundColor: "rgba(3, 208, 234, 0.23)",
+												borderColor: "#03d0ea",
+												pointBackgroundColor:'transparent',
+												pointHoverBackgroundColor:'#03d0ea',
+												pointBorderWidth :2,
+												pointRadius :3,
+												pointHoverRadius :3,
+												borderWidth: 3
+												
+										}]
+								},
+						options: {
+								legend: {
+									display: false,
+									labels: {
+										fontColor: '#585757',  
+										boxWidth:40
+									}
+								},
+								tooltips: {
+									displayColors:false
+								},  
+							scales: {
+									xAxes: [{
+										barPercentage: .3,
+										ticks: {
+												beginAtZero:true,
+												fontColor: '#585757'
+										},
+										gridLines: {
+											display: true ,
+											color: "rgba(0, 0, 0, 0.05)"
+										},
+									}],
+									 yAxes: [{
+										ticks: {
+												beginAtZero:true,
+												fontColor: '#585757'
+										},
+										gridLines: {
+											display: true ,
+											color: "rgba(0, 0, 0, 0.05)"
+										},
+									}]
+								 }
+
+						 }
+						}); 
+				</script>
+		</body>
+		</html>

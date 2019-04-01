@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Chart.js</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <h3 class="mt-2 text-center">Jquery KnobJs</h3>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="card rounded-0">
+                    <div class="card-header bg-warning rounded-0 text-white">
+                        chart 1
+                    </div>
+                    <div class="card-body p-3">
+                        <div class="chart easy-pie-chart-5" data-percent="55">
+                     <span class="percent"></span>
+                   </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card rounded-0">
+                    <div class="card-header bg-primary rounded-0 text-white">
+                        chart 2
+                    </div>
+                    <div class="card-body p-3">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card rounded-0">
+                    <div class="card-header bg-info rounded-0 text-white">
+                        chart 3
+                    </div>
+                    <div class="card-body p-0">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card rounded-0">
+                    <div class="card-header bg-success rounded-0 text-white">
+                       chart 4
+                    </div>
+                    <div class="card-body p-2">
+                        <canvas id="myChart4" width="400" ></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card rounded-0">
+                    <div class="card-header bg-dark rounded-0 text-white">
+                        chart 5
+                    </div>
+                    <div class="card-body p-2">
+                        <canvas id="myChart5" width="400" ></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card rounded-0">
+                    <div class="card-header bg-warning rounded-0 text-white">
+                        chart 6
+                    </div>
+                    <div class="card-body p-2">
+                        <canvas id="dash2-chart1" width="400" ></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!-- jquery easy pie -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/easypiechart.min.js"></script>
+
+     <script>
+        !function($) {
+    "use strict";
+
+    var EasyPieChart = function() {};
+
+    EasyPieChart.prototype.init = function() {
+        //initializing various types of easy pie charts
+        
+        $('.easy-pie-chart-1').easyPieChart({
+            easing: 'easeOutBounce',
+            barColor : '#14abef',
+            lineWidth: 6,
+            animate: 1000,
+            lineCap: 'rgba(0, 0, 0, 0.05)',
+            trackColor : 'rgba(0, 0, 0, 0.05)',
+            onStep: function(from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
+        });
+
+        $('.easy-pie-chart-2').easyPieChart({
+            easing: 'easeOutBounce',
+            barColor : '#02ba5a',
+            lineWidth: 6,
+            lineCap: 'rgba(0, 0, 0, 0.05)',
+            trackColor : 'rgba(0, 0, 0, 0.05)',
+            onStep: function(from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
+        });
+
+        $('.easy-pie-chart-3').easyPieChart({
+            easing: 'easeOutBounce',
+            barColor : '#d13adf',
+            lineWidth: 6,
+            lineCap: 'rgba(0, 0, 0, 0.05)',
+            trackColor : 'rgba(0, 0, 0, 0.05)',
+            onStep: function(from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
+        });
+
+        $('.easy-pie-chart-4').easyPieChart({
+            easing: 'easeOutBounce',
+            barColor : '#fe406e',
+            lineWidth: 6,
+            lineCap: 'rgba(0, 0, 0, 0.05)',
+            trackColor : 'rgba(0, 0, 0, 0.05)',
+            onStep: function(from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
+        });
+
+        $('.easy-pie-chart-5').easyPieChart({
+            easing: 'easeOutBounce',
+            barColor : '#000000',
+            lineWidth: 8,
+            trackColor : 'rgba(0, 0, 0, 0.05)',
+            scaleColor: false,
+            onStep: function(from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
+        });
+
+        $('.easy-pie-chart-6').easyPieChart({
+            easing: 'easeOutBounce',
+            barColor : '#fba540',
+            lineWidth: 8,
+            trackColor : 'rgba(0, 0, 0, 0.05)',
+            scaleColor: false,
+            onStep: function(from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
+        });
+
+
+        $('.easy-pie-chart-7').easyPieChart({
+            easing: 'easeOutBounce',
+            barColor : '#009688',
+            lineWidth: 8,
+            trackColor : 'rgba(0, 0, 0, 0.05)',
+            scaleColor: false,
+            onStep: function(from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
+        });
+
+        $('.easy-pie-chart-8').easyPieChart({
+            easing: 'easeOutBounce',
+            barColor : '#03d0ea',
+            lineWidth: 8,
+            trackColor : 'rgba(0, 0, 0, 0.05)',
+            scaleColor: false,
+            onStep: function(from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
+        });
+
+
+    },
+    //init
+    $.EasyPieChart = new EasyPieChart, $.EasyPieChart.Constructor = EasyPieChart
+}(window.jQuery),
+
+//initializing
+function($) {
+    "use strict";
+    $.EasyPieChart.init()
+}(window.jQuery);
+    </script>
+    <script>
+        $(function() {
+            $('.chart').easyPieChart({
+                //your options goes here
+            });
+        });
+    </script>
+
+
+    
+    </script>
+    </body>
+    </html>
