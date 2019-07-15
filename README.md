@@ -2,7 +2,7 @@
 Free charts for commercial use, just one click installation and you are ready to create Awesome Admin themes.
 
 ### first-shot
-[![free bootcatch charts](https://github.com/ajaymarathe/chartjs-googlecharts-morris-charts-etc/blob/master/img/shot-1.png)]
+[free bootcatch charts](https://github.com/ajaymarathe/chartjs-googlecharts-morris-charts-etc/blob/master/img/shot-1.png)
 
 ### second-shot
 [![free bootcatch charts](https://github.com/ajaymarathe/chartjs-googlecharts-morris-charts-etc/blob/master/img/shot-2.png)]
