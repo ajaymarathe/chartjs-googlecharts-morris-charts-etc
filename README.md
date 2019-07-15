@@ -2,10 +2,10 @@
 Free charts for commercial use, just one click installation and you are ready to create Awesome Admin themes.
 
 ### first-shot
-[![bling-admin-theme](https://github.com/ajaymarathe/bling-admin-theme/blob/master/assets/img/first-shot.png)](http://preview.bootcatch.com/bling-admin-theme/)
+[![free bootcatch charts](https://github.com/ajaymarathe/chartjs-googlecharts-morris-charts-etc/blob/master/img/shot-1.png)]
 
 ### second-shot
-[![bling-admin-theme](https://github.com/ajaymarathe/bling-admin-theme/blob/master/assets/img/second-shot.png)](http://preview.bootcatch.com/bling-admin-theme/)
+[![free bootcatch charts](https://github.com/ajaymarathe/chartjs-googlecharts-morris-charts-etc/blob/master/img/shot-2.png)]
 
 ## About
 
@@ -28,11 +28,6 @@ Ajay Marathe
 
 + https://github.com/ajaymarathe
 + http://bootcatch.com
-
-## Special thanks
-
-Thanks to Creative Tim - this theme is based on Material Dashboard - v2.1.0.
-+ https://www.creative-tim.com/product/material-dashboard
 
 ## Copyright and License
 
